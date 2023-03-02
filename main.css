@@ -1,0 +1,143 @@
+:root {
+    --primary: crimson;
+    --dark: #1F2937;
+    --darkdark: #111827;
+    --light: #F3F4F6;
+    --darkbackground: #141414;
+    --grey: rgb(48, 47, 47);
+    --lightgrey: rgb(100, 100, 100);
+    --blue: rgb(39, 41, 218);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Century Gothic', 'sans-serif';
+}
+
+body{
+    background: var(--darkbackground);
+    color: var(--light);
+}
+
+.watch{
+    text-align: center;
+    background-color: transparent;
+    width: 100%;
+    max-width: 360px;
+    margin: 25rem auto;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+}
+
+.time{
+    font-size: 5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.controls{
+    display: inline-flex;
+}
+
+.controls .icon{
+    margin: 200px 20px;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+
+.controls .icon span{
+    position: relative;
+    height: 60px;
+    width: 60px;
+    display: block;
+    background: var(--grey);
+    text-align: center;
+    border-radius: 50%;
+    z-index: 2;
+    transition: all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+    /*box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);*/
+}
+
+.controls .icon span i{
+    font-size: 29px;
+    line-height: 60px;
+    height: auto;
+}
+
+.controls .icon .tooltip{
+    position: relative;
+    top: 0px;
+    background: var(--lightgrey);
+    font-size: 20px;
+    padding: 15px 30px;
+    border-radius: 25px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+
+.controls .icon:hover span{
+    background: var(--lightgrey);
+}
+
+.controls .icon:hover .tooltip{
+    top: -15px;
+    opacity: 1;
+    pointer-events: auto;
+
+
+}
+
+.controls .icon .tooltip:before{
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    background: var(--lightgrey);
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+
+}
+
+.timer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timer button{
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+    user-select: none;
+    cursor: pointer;
+
+    color: var(--light);
+    font-size: 1.125rem;
+    background-color: transparent;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: 0.4s;    
+}
+
+button:hover {
+    /*opacity: 0.7;*/
+    background-color: var(--light);
+    color: var(--darkbackground);
+}
+
+button:active {
+    background-color: var(--dark);
+}
